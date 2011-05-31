@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: ActionView::Helpers::TranslationHelper</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">ActionView::Helpers::TranslationHelper</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/Users/tim/_rvm/gems/ruby-1_8_7-p334@traveljournal/gems/actionpack-3_0_7/lib/action_view/helpers/translation_helper_rb.html">
+                /Users/tim/.rvm/gems/ruby-1.8.7-p334@traveljournal/gems/actionpack-3.0.7/lib/action_view/helpers/translation_helper.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M001780">l</a>&nbsp;&nbsp;
+      <a href="#M001779">localize</a>&nbsp;&nbsp;
+      <a href="#M001778">t</a>&nbsp;&nbsp;
+      <a href="#M001777">translate</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M001780" class="method-detail">
+        <a name="M001780"></a>
+
+        <div class="method-heading">
+          <span class="method-name">l</span><span class="method-args">(*args)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="TranslationHelper.html#M001779">localize</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001779" class="method-detail">
+        <a name="M001779"></a>
+
+        <div class="method-heading">
+          <a href="#M001779" class="method-signature">
+          <span class="method-name">localize</span><span class="method-args">(*args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Delegates to I18n.localize with no additional functionality.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M001779-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M001779-source">
+<pre>
+    <span class="ruby-comment cmt"># File /Users/tim/.rvm/gems/ruby-1.8.7-p334@traveljournal/gems/actionpack-3.0.7/lib/action_view/helpers/translation_helper.rb, line 58</span>
+58:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">localize</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+59:         <span class="ruby-constant">I18n</span>.<span class="ruby-identifier">localize</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+60:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M001778" class="method-detail">
+        <a name="M001778"></a>
+
+        <div class="method-heading">
+          <span class="method-name">t</span><span class="method-args">(key, options = {})</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="TranslationHelper.html#M001777">translate</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001777" class="method-detail">
+        <a name="M001777"></a>
+
+        <div class="method-heading">
+          <a href="#M001777" class="method-signature">
+          <span class="method-name">translate</span><span class="method-args">(key, options = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Delegates to I18n#translate but also performs three additional functions.
+</p>
+<p>
+First, it&#8216;ll pass the :rescue_format =&gt; :html option to <a
+href="../../I18n.html">I18n</a> so that any caught MissingTranslationData
+exceptions will be turned into inline spans that
+</p>
+<pre>
+  * have a &quot;translation-missing&quot; class set,
+  * contain the missing key as a title attribute and
+  * a titleized version of the last key segment as a text.
+</pre>
+<p>
+E.g. the value returned for a missing translation key
+:&quot;blog.post.title&quot; will be &lt;span
+class=&quot;translation_missing&quot; title=&quot;translation missing:
+blog.post.title&quot;&gt;Title&lt;/span&gt;. This way your views will
+display rather reasonableful strings but it will still be easy to spot
+missing translations.
+</p>
+<p>
+Second, it&#8216;ll scope the key by the current partial if the key starts
+with a period. So if you call <tt><a
+href="TranslationHelper.html#M001777">translate</a>(&quot;.foo&quot;)</tt>
+from the <tt>people/index.html.erb</tt> template, you&#8216;ll actually be
+calling <tt>I18n.translate(&quot;people.index.foo&quot;)</tt>. This makes
+it less repetitive to <a
+href="TranslationHelper.html#M001777">translate</a> many keys within the
+same partials and gives you a simple framework for scoping them
+consistently. If you don&#8216;<a
+href="TranslationHelper.html#M001778">t</a> prepend the key with a period,
+nothing is converted.
+</p>
+<p>
+Third, it&#8216;ll mark the translation as safe HTML if the key has the
+suffix &quot;_html&quot; or the last element of the key is the word
+&quot;html&quot;. For example, calling <a
+href="TranslationHelper.html#M001777">translate</a>(&quot;footer_html&quot;)
+or <a
+href="TranslationHelper.html#M001777">translate</a>(&quot;footer.html&quot;)
+will return a safe HTML string that won&#8216;<a
+href="TranslationHelper.html#M001778">t</a> be escaped by other HTML helper
+methods. This naming convention helps to identify translations that include
+HTML tags so that you know what kind of output to expect when you call <a
+href="TranslationHelper.html#M001777">translate</a> in a template.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M001777-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M001777-source">
+<pre>
+    <span class="ruby-comment cmt"># File /Users/tim/.rvm/gems/ruby-1.8.7-p334@traveljournal/gems/actionpack-3.0.7/lib/action_view/helpers/translation_helper.rb, line 46</span>
+46:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">translate</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">options</span> = {})
+47:         <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">:rescue_format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">:html</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">:rescue_format</span>)
+48:         <span class="ruby-identifier">translation</span> = <span class="ruby-constant">I18n</span>.<span class="ruby-identifier">translate</span>(<span class="ruby-identifier">scope_key_by_partial</span>(<span class="ruby-identifier">key</span>), <span class="ruby-identifier">options</span>)
+49:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">html_safe_translation_key?</span>(<span class="ruby-identifier">key</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">translation</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:html_safe</span>)
+50:           <span class="ruby-identifier">translation</span>.<span class="ruby-identifier">html_safe</span>
+51:         <span class="ruby-keyword kw">else</span>
+52:           <span class="ruby-identifier">translation</span>
+53:         <span class="ruby-keyword kw">end</span>
+54:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
