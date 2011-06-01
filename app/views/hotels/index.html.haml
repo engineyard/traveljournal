@@ -1,5 +1,4 @@
 %h1 Hotels as of #{day_today}
 %ul#hotels
-  %li Hilton
-  %li Hyatt
-  %li Joe's Inn
+  - @hotels.each do |hotel|
+    %li= link_to hotel.name, hotel
