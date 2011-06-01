@@ -9,5 +9,10 @@
 cities = City.create([
   { :name => "Chattanooga" },
   { :name => "Chicago" },
-  { :name => "Cincinnati" }
+  { :name => "Cincinnati" },
+  { :name => "San Francisco" },
+  { :name => "New York City" },
+  { :name => "Dallas" },
+  { :name => "Oklahoma City" },
+  { :name => "Portland" }
 ])
