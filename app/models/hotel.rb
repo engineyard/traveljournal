@@ -7,4 +7,8 @@ class Hotel < ActiveRecord::Base
   def ensure_name_is_in_titlecase
     self.name = self.name.titlecase
   end
+
+  def self.yet_to_visit
+    where(:visited => false)
+  end
 end
