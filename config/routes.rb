@@ -2,6 +2,9 @@ Traveljournal::Application.routes.draw do
   resources :hotels
   resources :trips
 
+  #root :to => "hotels#index"
+  root :to => redirect("/hotels")
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
