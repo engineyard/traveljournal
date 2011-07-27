@@ -1,0 +1,8 @@
+<h1>Hotels as of <%= day_today %></h1>
+<ul id="hotels">
+  <% @hotels.each do |hotel| %>
+    <li><%= link_to hotel.name, hotel %></li>
+  <% end %>
+</ul>
+
+<%= link_to "New Hotel", new_hotel_path %>

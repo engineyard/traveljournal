@@ -1,0 +1,19 @@
+<% if flash[:error].present? %>
+  <div class="error"><%= flash[:error] %></div>
+<% end %>
+
+<%= form_for @trip do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :date %>
+    <%= f.date_select :date %>
+  </div>
+  <div>
+    <%= f.label :hotel_id, "Hotel" %>
+    <%= f.collection_select(:hotel_id, @hotels, :id, :name) %>
+  </div>
+  <%= f.submit 'Save' %>
+<% end %>

@@ -1,0 +1,6 @@
+<h1><%= @hotel.name %></h1>
+<p><%= @hotel.description %></p>
+
+<%= link_to "Back", hotels_path %>
+<%= link_to "Edit", edit_hotel_path(@hotel) %>
+<%= button_to "Delete", @hotel, :method=>:delete, :confirm => "Are you SURE?!?!" %>

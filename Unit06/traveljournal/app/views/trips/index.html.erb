@@ -1,0 +1,6 @@
+<h1>Trips as of <%= day_today %></h1>
+<ul id="trips">
+  <% @trips.each do |trip| %>
+    <li><%= link_to trip.name, trip %></li>
+  <% end %>
+</ul>
